@@ -1,0 +1,372 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="assets/css/style_home.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+
+    <style>
+        body {
+            font-family: 'Raleway';
+            background-color: #fff;
+            /* margin: 2%; */
+        }
+
+        main {
+            margin: 2%;
+            margin-top: 5%;
+        }
+
+        .navbar li {
+            margin-left: 25px;
+            margin-right: 10px;
+        }
+
+        .navbar a:hover {
+            color: rgb(200, 228, 251);
+            size: 2rem;
+        }
+
+        .btn-outline-primary {
+            font-family: 'Raleway';
+            font-size: 13px;
+        }
+
+        .product {
+            margin: 3%;
+            margin-top: 10%;
+            text-align: center;
+        }
+
+        .carousel-inner {
+            height: 70vh;
+        }
+
+        .price {
+            margin-top: 7%;
+            text-decoration: none;
+        }
+
+        .prices h6 {
+            font-size: 12pt;
+            color: #0C1B1B;
+            font-family: 'Verdana';
+        }
+
+        .prices {
+            color: #0C1B1B;
+            border-color: #0C1B1B;
+            background-color: thistle;
+        }
+
+        .details {
+            margin-top: 2%;
+        }
+
+        .card-header {
+            background-color: #0C1B1B;
+        }
+
+        .card-title {
+            color: #0C1B1B;
+        }
+
+        .btn {
+            background-color: #0C1B1B;
+        }
+
+        footer {
+            margin-top: 20%;
+            background-color: #0C1B1B;
+            color: #fff;
+            padding: 3%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-lg mb-0 fixed-top" style="background-color: #0C1B1B;">
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0 h6" href="#">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="28" height="24" class="d-inline-block align-text-top">
+                Ghar Dhundo:
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Favourites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout">
+                        <button type="button" class="btn btn-login btn-outline-primary rounded">Logout</button>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+   
+
+    <main>
+        <div class="d-flex">
+            <div id="carouselExampleIndicators" class="carousel-slide card col-md-8" data-ride="carousel"
+                style="margin-right: 1%;">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img class="card-img-top d-block w-100" src="{{houseimage1.image.url}}">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img class="card-img-top d-block w-100" src="{{houseimage2.image.url}}">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title" style="font-family: Work sans;">Exotic 3BHK Place in Bangalore</h3>
+                    <h5 class="card-text">
+                        1700 sq. ft. | Balcony | Interior Designed | Furnished | 7th floor |
+                    </h5>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <span class="badge rounded-pill bg-secondary">Balcony</span>
+                    <span class="badge rounded-pill bg-secondary">Exquisite Interiors</span>
+                    <span class="badge rounded-pill bg-secondary">Handmade Wooden Work</span>
+                    <span class="badge rounded-pill bg-secondary">Peak commute</span>
+                    <span class="badge rounded-pill bg-secondary">Peaceful view</span>
+                    <span class="badge rounded-pill bg-secondary">Cheap price</span>
+                    <span class="badge rounded-pill bg-secondary">Smooth lighting</span>
+                    <span class="badge rounded-pill bg-secondary">In demand</span>
+                    <span class="badge rounded-pill bg-secondary">5th floor</span>
+                </div>
+
+
+                <div class="container border rounded product col-md-12">
+                    <h5 class="display-6 mb-0" style="padding-bottom: 5%;">Prices</h5>
+                    <span class="visually-hidden">Loading...</span>
+                    <div class="container row col-md-12">
+                        <div class="container col-md-6 border rounded bg-light prices"
+                            style="text-align: center; margin-bottom: 1%; margin-right: 1%;">
+                            <h6>Buying Price</h6>
+                        </div>
+                        <div class="container col-md-5 border rounded bg-light prices"
+                            style="text-align: center; margin-bottom: 1%; margin-right: 1%;">
+                            <h6>2.03 cr &#8377;</h6>
+                        </div>
+                        <div class="container col-md-7 border rounded bg-light prices"
+                            style="text-align: center; margin-bottom: 1%; margin-right: 1%;">
+                            <h6>Renting Price (per month)</h6>
+                        </div>
+                        <div class="container col-md-4 border rounded bg-light prices"
+                            style="text-align: center; margin-bottom: 1%; margin-right: 1%;">
+                            <h6>43,000 &#8377;</h6>
+                        </div>
+                        <div class="container col-md-7 border rounded bg-light prices"
+                            style="text-align: center; margin-bottom: 1%; margin-right: 1%;">
+                            <h6>Leasing Price (per quarter)</h6>
+                        </div>
+                        <div class="container col-md-4 border rounded bg-light prices"
+                            style="text-align: center; margin-bottom: 1%; margin-right: 1%;">
+                            <h6>N/A</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container bg-success rounded-pill col-md-9 justify-content-center"
+                    style="padding: 4%; text-align: center; margin-bottom: 5%; font-family: Verdana; color: white;">
+                    <h4 style="font-size: 15pt;"> Over <b>43</b> Customers have already favourited this. <br>Hurry up!
+                    </h4>
+                </div>
+
+                <div class="container" style="text-align: center;">
+                    <button class="btn btn-dark col-md-6">Add to Favourites</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <div class="container-fluid col-md-12 details row">
+
+                <div class="container-fluid col-md-6 col">
+                    <h3 class="display-6">Specifications</h3>
+                    <table class="table">
+                        <tr class="row">
+                            <td class="col-md-6">Home ID</td>
+                            <td class="col-md-6">{{houseid.houseid}}</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Carpet Area</td>
+                            <td class="col-md-6">1700 sq. ft.</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Bedrooms</td>
+                            <td class="col-md-6">3</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Washrooms</td>
+                            <td class="col-md-6">1 + 1 (attached)</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">kitchen</td>
+                            <td class="col-md-6">Modular</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Balcony</td>
+                            <td class="col-md-6">Yes</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Parking Space</td>
+                            <td class="col-md-6">Yes</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Old/New</td>
+                            <td class="col-md-6">Newly made</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Furniture</td>
+                            <td class="col-md-6">Included</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Gym</td>
+                            <td class="col-md-6">3 mins walk</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Grounds</td>
+                            <td class="col-md-6">Opposite</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Swimming Pool</td>
+                            <td class="col-md-6">In the apartment</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-md-6">Commute</td>
+                            <td class="col-md-6">Highway, Metro and other commutes nearby</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="container-fluid col-md-6 col card border-light">
+                    <div class="card-header text-white rounded"> Chiranmoy Bhattacharya </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Interior, exterior, it's like a poetry.</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+
+                    <div class="card-header text-white rounded"> Niraj Jaiswal </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Interior, exterior, like a poetry.</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+
+                    <div class="card-header text-white rounded"> Bhumika Khetan </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Interior, exterior, like a poetry.</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+
+                    <div class="card-header text-white rounded"> Prateek Gothwal </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Interior, exterior, like a poetry.</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- 
+    furtniture, balcony, old/new, parking space, Bedroom, Kitchen, Nearby Locations, Swimming pool, Gym, 
+ -->
+
+    <footer class="w-100">
+        <div class="container-md">
+            <div class="row">
+                <div class="col-md-5 footer-col">
+                    <h4>Ghar Dhundo</h4>
+                    <p>Find your home anywhere</p>
+                </div>
+
+                <div class="col footer-col">
+                    <ul class="nav col-md-5 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-google fa-lg"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col footer-col">
+                    <h4>Newsletter</h4>
+                    <div class="form-group">
+                        <form class="form-inline col-sm-8">
+                            <input type="text" class="mb-2 col-sm-2 form-control" placeholder="Enter email address">
+                        </form>
+                        <button class="btn btn-primary col-sm-4" type="submit"> Subscribe </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

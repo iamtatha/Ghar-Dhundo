@@ -1,0 +1,290 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="assets/css/style_home.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+        <style>
+            body {
+                font-family: 'Raleway';
+                background-color: #fff;
+            }
+    
+            main {
+                margin-top: 5%;
+            }
+    
+            .carousel-inner img {
+                width: 90%;
+                height: 30vh;
+            }
+    
+            .navbar li {
+                margin-left: 25px;
+                margin-right: 10px;
+            }
+    
+            .navbar a:hover {
+                color: rgb(200, 228, 251);
+                size: 2rem;
+            }
+    
+            .hero {
+                height: 60vh;
+                background-image: url('{% static 'images/test1.jpg' %}'), radial-gradient(ellipse at bottom right, rgb(255, 255, 255), transparent);
+                background-blend-mode: lighten;
+                padding: 0;
+            }
+    
+            .hero-title {
+                height: 60vh;
+                width: 100%;
+            }
+    
+    
+    
+            .btn-outline-primary {
+                font-family: 'Raleway';
+                font-size: 13px;
+            }
+    
+    
+            .search {
+                width: 60%;
+                margin-top: 5%;
+            }
+    
+    
+            .search button {
+                margin-top: 3%;
+                margin-bottom: 1%;
+                margin-left: 3%;
+                margin-right: 3%;
+                background-color: #0C1B1B;
+                font-size: 80%;
+                color: #fff;
+            }
+    
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 2%;
+                grid-gap: 5%;
+                margin-top: 5%;
+            }
+    
+            .grid-item {
+                width: 70%;
+                margin: auto;
+                margin-bottom: 4%;
+            }
+    
+            footer {
+                margin-top: 20%;
+                background-color: #0C1B1B;
+                color: #fff;
+                padding: 3%;
+            }
+    
+            .card-link {
+                text-decoration: none;
+                color: black;
+            }
+    
+            @media(max-width: 1100px) {
+                main {
+                    margin-top: 13%;
+                }
+    
+                .grid-item {
+                    width: 98%;
+                    margin: auto;
+                    margin-bottom: 4%;
+                }
+    
+                .card-body p {
+                    font-size: 70%;
+                }
+    
+                .card-body h5 {
+                    font-size: 90%;
+                }
+    
+                .search button {
+                    width: 100%;
+                }
+    
+                .search {
+                    text-align: center;
+                }
+    
+                .footer-col {
+                    display: block;
+                    margin: auto;
+                }
+            }
+        </style>
+            
+    
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-lg mb-0 fixed-top" style="background-color: #0C1B1B;">
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0 h6" href="#">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="28" height="24" class="d-inline-block align-text-top">
+                Ghar Dhundo:
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Favourites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout">
+                        <button type="button" class="btn btn-login btn-outline-primary rounded">Logout</button>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main>
+
+
+
+        <div class="container hero container-md col-md-12">
+            <div id="hero" class="row hero-title">
+                <div class="col-12" style="height: 45vh; display: inline;"></div>
+                <div class="col-6" style="height: 10vh; display: inline;"></div>
+                <div class="name col-6" style="display: inline; text-align: right;">
+                    <h1>Ghar Dhundo</h1>
+                    <h4>Find your home anywhere</h4>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% comment %} <div class="container container-md col-md-9 search">
+        <div>
+            <button type="button" class="btn btn-primary rounded">Location</button>
+            <button type="button" class="btn btn-primary rounded">Accomodation</button>
+            <button type="button" class="btn btn-primary rounded">Price</button>
+            <button type="button" class="btn btn-primary rounded">Sea-View</button>
+            <button type="button" class="btn btn-primary rounded">Hilltop</button>
+            <button type="button" class="btn btn-primary rounded">Others</button>
+        </div>
+    </div> {% endcomment %}
+
+    <div class="input-group">
+        <div class="input-group-prepend" style="margin-right: 1%;">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Dropdown</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="productlist/Bangalore">Bangalore</a>
+                <a class="dropdown-item" href="productlist/Mumbai">Mumbai</a>
+                <a class="dropdown-item" href="productlist/Kolkata">Kolkata</a>
+                <a class="dropdown-item" href="productlist/Delhi">Delhi</a>
+                <a class="dropdown-item" href="productlist/Hyderabad">Hyderabad</a>
+                <a class="dropdown-item" href="productlist/Chennai">Chennai</a>
+            </div>
+        </div>
+        <input type="text" class="form-control rounded" placeholder="Which city you want to stay at?"
+            aria-label="Text input with dropdown button">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+    </div>
+
+    <div class="container grid-container container-md col-md-9 cards">
+        {% for ltable in ltable %}
+        <a class="card-link" href="productlist/{{ltable.location}}">
+            <div class="grid-item card-half card-left card">
+                <img class="card-img-top" src="{{ltable.image.url}}"> 
+                <div class="card-body">
+                    <h5 class="card-title">{{ltable.location}}</h5>
+                    <p class="card-text">{{ltable.title}}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    <footer class="w-100">
+        <div class="container-md">
+            <div class="row">
+                <div class="col-md-5 footer-col">
+                    <h4>Ghar Dhundo</h4>
+                    <p>Find your home anywhere</p>
+                </div>
+
+                <div class="col footer-col">
+                    <ul class="nav col-md-5 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-google fa-lg"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="col footer-col">
+                    <h4>Newsletter</h4>
+                    <div class="form-group">
+                        <form class="form-inline col-sm-8">
+                            <input type="text" class="mb-2 col-sm-2 form-control" placeholder="Enter email address">
+                        </form>
+                        <button class="btn btn-primary col-sm-4" type="submit"> Subscribe </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,448 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="assets/css/style_home.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Raleway';
+            background-color: #fff;
+            padding-top: 5%;
+            margin: auto;
+        }
+
+        main {
+            margin-top: 5%;
+        }
+
+        .navbar li {
+            margin-left: 25px;
+            margin-right: 10px;
+        }
+
+        .navbar a:hover {
+            color: rgb(200, 228, 251);
+            size: 2rem;
+        }
+
+        .btn-outline-primary {
+            font-family: 'Raleway';
+            font-size: 13px;
+        }
+
+        .features {
+            display: inline-block;
+            border-right: #0C1B1B;
+            border-width: 100px;
+            margin-left: 2%;
+        }
+
+        .items {
+            background-color: aqua;
+            display: inline-block;
+        }
+
+        table {
+            margin-left: 2%;
+            margin-right: 2%;
+            display: inline-block;
+        }
+
+        .btn-outline-primary {
+            border-color: #0C1B1B;
+            color: #0C1B1B;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #0C1B1B;
+        }
+
+        .btn-login {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        .btn-login:hover {
+            background-color: #0D6EFD;
+            color: #fff;
+        }
+
+        .card-img-left {
+            width: 30%;
+        }
+
+        .card-link{
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 20%;
+            background-color: #0C1B1B;
+            color: #fff;
+            padding: 3%;
+        }
+
+        @media(max-width: 1100px) {
+            body {
+                padding-top: 18%;
+            }
+
+            h4 {
+                font-size: 11pt;
+            }
+
+            h3 {
+                font-size: 11pt;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-lg mb-0 fixed-top" style="background-color: #0C1B1B;">
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0 h6" href="#">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="28" height="24" class="d-inline-block align-text-top">
+                Ghar Dhundo:
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Favourites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout">
+                        <button type="button" class="btn btn-login btn-outline-primary rounded">Logout</button>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <table>
+
+        <tr class="col-md-2">
+            
+            <td class="col-md-2 px-2 border-right border rounded col-left">
+            <form method="post" action = "">
+                {%csrf_token%}
+                <div class="features">
+                    <h4 class="top">Search by features</h4>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <button class="btn btn-outline-primary col-md-8" type="button" data-toggle="collapse"
+                                data-target="#location" aria-expanded="false" aria-controls="location">
+                                Location
+                            </button>
+                            <div class="collapse" id="location">
+                                <div class="card card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="locations" type="checkbox" value="Bangalore"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Bangalore
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="locations" type="checkbox" value="Mumbai"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Mumbai
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="locations" type="checkbox" value="Kolkata"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Kolkata
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="locations" type="checkbox" value="Delhi"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Delhi
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="locations" type="checkbox" value="Hyderabad"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Hyderabad
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="locations" type="checkbox" value="Chennai"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Chennai
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="btn btn-outline-primary col-md-8" type="button" data-toggle="collapse"
+                                data-target="#bhk" aria-expanded="false" aria-controls="bhk">
+                                BHK
+                            </button>
+                            <div class="collapse" id="bhk">
+                                <div class="card card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="BHK" type="checkbox" value="1BHK"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            1 BHK
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="BHK" type="checkbox" value="2BHK"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            2 BHK
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="BHK" type="checkbox" value="3BHK"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            3 BHK
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="btn btn-outline-primary rounded col-md-8" type="button"
+                                data-toggle="collapse" data-target="#area" aria-expanded="false" aria-controls="area">
+                                Sq. Feet
+                            </button>
+                            <div class="collapse" id="area">
+                                <div class="card card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="area" type="checkbox" value="lessthan800"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Less than 800 sq. ft.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="area" type="checkbox" value="800to1200"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            800 sq. ft. to 1200 sq. ft.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="area" type="checkbox" value="1200to1600"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            1200 sq. ft. to 1600 sq. ft.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="area" type="checkbox" value="1600to2000"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            1600 sq. ft. to 2000 sq. ft.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="area" type="checkbox" value="morethan2000"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            More than 2000 sq. ft.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="btn btn-outline-primary col-md-8" type="button" data-toggle="collapse"
+                                data-target="#action" aria-expanded="false" aria-controls="action">
+                                Action
+                            </button>
+                            <div class="collapse" id="action">
+                                <div class="card card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="actions" type="checkbox" value="buy"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Buying
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="actions" type="checkbox" value="rent"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Renting
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"  name="actions" type="checkbox" value="lease"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Leasing
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="btn btn-outline-primary col-md-8" type="button" data-toggle="collapse"
+                                data-target="#other" aria-expanded="false" aria-controls="other">
+                                Others
+                            </button>
+                            <div class="collapse" id="other">
+                                <div class="card card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input"  name="others" type="checkbox" value="Balcony"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Balcony
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"  name="others" type="checkbox" value="Parking Spot"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Parking spot
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="others" type="checkbox" value="Top Floor"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Top floor
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="others" type="checkbox" value="Well Furnished"
+                                            id="flexCheckIndeterminate">
+                                        <label class="form-check-label" for="flexCheckIndeterminate">
+                                            Well furnished
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="submit_button btn btn-lg col-md-8" type="submit">
+                    <i class="fa-solid fa-magnifying-glass-location"></i> Search
+                </button>
+                </form>
+            </td>
+        
+            <td class=" border-right border rounded" style="padding-left: 2%">
+                <h3 style="text-align: center;"> Your results are here!</h3>
+                {% for lh in lochouses %}
+                <a href="/product/{{lh.houseid}}" class="card-link"> 
+                    <div class="card flex-row">
+                        
+                        <img class="card-img-left example-card-img-responsive" src="{{lh.image.url}}" >
+                        <div class="card-body" >
+                            <h4>{{lh.location}}</h4>
+                            <p class="card-text" >HouseID: {{lh.houseid}} SellerID: {{lh.sellerid}} Size: {{lh.sqfeet}}</p>
+                            <p class="card-text">BHK: {{lh.bhk}}</p>
+                            <p class="card-text">Action: {{lh.action}}</p>
+
+                            <p class="card-text">Features : {{lh.others}}</p>                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="w-100">
+        <div class="container-md">
+            <div class="row">
+                <div class="col-md-5 footer-col">
+                    <h4>Ghar Dhundo</h4>
+                    <p>Find your home anywhere</p>
+                </div>
+
+                <div class="col footer-col">
+                    <ul class="nav col-md-5 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-google fa-lg"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col footer-col">
+                    <h4>Newsletter</h4>
+                    <div class="form-group">
+                        <form class="form-inline col-sm-8">
+                            <input type="text" class="mb-2 col-sm-2 form-control" placeholder="Enter email address">
+                        </form>
+                        <button class="btn btn-primary col-sm-4" type="submit"> Subscribe </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

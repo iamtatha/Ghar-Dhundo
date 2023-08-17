@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="assets/css/style_home.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        function show_signup() {
+            var x = document.getElementById("login");
+            x.style.display = "block";
+
+            var x = document.getElementById("signup");
+            x.style.display = "none";
+
+
+            var x = document.getElementById("hide-FirstName");
+            x.style.display = "block";
+            
+            var x = document.getElementById("hide-LastName");
+            x.style.display = "block";
+
+            var x = document.getElementById("hide-email");
+            x.style.display = "block";
+        
+            var x = document.getElementById("hide-cp");
+            x.style.display = "block";
+
+        }
+        function show_login() {
+            var x = document.getElementById("login");
+            x.style.display = "none";
+
+            var x = document.getElementById("signup");
+            x.style.display = "block";
+
+
+            
+
+        }
+        
+    </script>
+
+    <style>
+        body {
+            margin-top: 5%;
+            font-family: 'Raleway';
+        }
+
+        .navbar li {
+            margin-left: 25px;
+            margin-right: 10px;
+        }
+
+        .navbar a:hover {
+            color: rgb(200, 228, 251);
+            size: 2rem;
+        }
+
+        .btn-outline-primary {
+            font-family: 'Raleway';
+            font-size: 13px;
+        }
+
+        .intro:hover {
+            background: radial-gradient(ellipse at bottom right, rgb(255, 255, 255), transparent);
+        }
+
+        .login input {
+            background-color: #0C1B1B;
+        }
+
+        .login input:hover {
+            background-color: #0275d8;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .intro img {
+            opacity: 0.4;
+        }
+
+        a {
+            color: #0C1B1B;
+            font-size: 11pt;
+        }
+
+        .login-signup {
+            margin-top: 12%;
+        }
+
+        .form-group {
+            margin-top: 3%;
+        }
+
+        .form-check {
+            margin-top: 4%;
+        }
+
+        .form p {
+            margin-top: 4%;
+        }
+
+        .hide-it {
+            display: none;
+        }
+        #login {
+            display: none;
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-lg mb-0 fixed-top" style="background-color: #0C1B1B;">
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0 h6" href="#">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="28" height="24" class="d-inline-block align-text-top">
+                Ghar Dhundo:
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container login-signup">
+        <div class="row">
+
+            <div class="col-md-7 intro">
+                <img src="{% static 'images/test1.jpg' %}" class="col-md-12 view">
+            </div>
+
+            <div class="col-md-5 form container">
+                <h3>Login/Sign Up!</h3>
+                <form action="signup" method="post" id="signup">
+                    {% csrf_token %}
+                    <div class="username form-group">
+                        <label for="username">User Name</label>
+                        <input type="username" name="un" class="col-md-4 form-control">
+                    </div>
+
+                    <div class="password form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="col-md-4 form-control">
+                    </div>
+                    <a href="#!">Forgot Password?</a>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Subscribe to our Newsletter</label>
+                    </div>
+                    <div class="button login form-group">
+                        <input name="login" class="btn btn-secondary btn-md rounded" type="submit" value="login">
+                    </div>
+                    <p>Don't have an account? <a href="#!" onclick="show_signup()">Signup here!</a> </p>
+                </form>
+                <form action="/" method="post" id="login">
+                    {% csrf_token %}
+                    <div class="username form-group">
+                        <label for="username">User Name</label>
+                        <input type="username" name="un" class="col-md-4 form-control">
+                    </div>
+                    <div class="FirstName hide-it form-group" id="hide-FirstName">
+                        <label for="FirstName">First Name</label>
+                        <input type="FirstName" name="FN" class="col-md-4 form-control">
+                    </div>
+                    <div class="LastName hide-it form-group" id="hide-LastName">
+                        <label for="LastName">Last Name</label>
+                        <input type="LastName" name="LN" class="col-md-4 form-control">
+                    </div>
+                    <div class="email hide-it form-group" id="hide-email">
+                        <label for="email">Email</label>
+                        <input type="email" name="email"  class="col-md-5 form-control">
+                    </div>
+                    <div class="password form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="col-md-4 form-control">
+                    </div>
+                    <div class="confirm-password hide-it form-group" id="hide-cp">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" name="confirmpass" class="col-md-4 form-control">
+                    </div>
+                    <a href="#!">Forgot Password?</a>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Subscribe to our Newsletter</label>
+                    </div>
+                    <div class="button login form-group">
+                        <input name="login" class="btn btn-secondary btn-md rounded" type="submit" value="Signup">
+                    </div>
+                    <p>Don't have an account? <a href="#!" onclick="show_login()">Login here!</a> </p>
+                </form>
+                <div>
+                    {% for output in messages %}
+                    <h3>{{ output }}</h3>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>

@@ -1,0 +1,216 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="assets/css/style_home.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin-top: 10%;
+            font-family: 'Raleway';
+        }
+
+        .navbar li {
+            margin-left: 25px;
+            margin-right: 10px;
+        }
+
+        .navbar a:hover {
+            color: rgb(200, 228, 251);
+            size: 2rem;
+        }
+
+        .btn-outline-primary {
+            font-family: 'Raleway';
+            font-size: 13px;
+        }
+
+        .social a{
+            margin-right: 2%;
+            text-decoration: none;
+            color: #0C1B1B;
+        }
+
+        footer {
+            margin-top: 20%;
+            background-color: #0C1B1B;
+            color: #fff;
+            padding: 3%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-lg mb-0 fixed-top" style="background-color: #0C1B1B;">
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0 h6" href="#">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="28" height="24" class="d-inline-block align-text-top">
+                Ghar Dhundo:
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Favourites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout">
+                        <button type="button" class="btn btn-login btn-outline-primary rounded">Logout</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="container justify-content-center col-md-8">
+                <h3 class="display-6">What is Ghar Dhundo?</h3>
+                <div class="d-flex justify">
+                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore
+                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                        ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+
+            <div class="row intro" style="margin-top: 5%;">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    
+                    <div class="" style="text-align: center;">
+                        <img class="rounded-circle" src="{% static 'images/Tatha3.jpeg' %}" style="width: 70%;">
+                    </div>
+                    <div class="" style="padding-top: 4%;">
+                        <div class="text-title display-6"
+                            style="font-size: 24pt; text-align:center; margin-bottom: 2%;">
+                            Tathagata Dey
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p>
+                                Tathagata is a master's student in Computer Science and Engineering in Indian Institute
+                                of Technology Bombay (IIT Bombay). He finds his interests in development, machine
+                                learning and
+                                research applications.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container social" style="text-align: center;">
+                        <a href=""> <i class="fa-solid fa-globe"></i> </a>    
+                        <a href=""> <i class="fa-brands fa-instagram"></i> </a> 
+                        <a href=""> <i class="fa-brands fa-facebook"></i> </a> 
+                        <a href=""> <i class="fa-sharp fa-solid fa-envelope"></i> </a> 
+                        <a href=""> <i class="fa-brands fa-linkedin"></i> </a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="" style="text-align: center;">
+                        <img class="rounded-circle" src="{% static 'images/nilava.jpg' %}" style="width: 70%;">
+                    </div>
+                    <div class="" style="padding-top: 4%;">
+                        <div class="text-title display-6"
+                            style="font-size: 24pt; text-align:center; margin-bottom: 2%;">
+                            Nilava Sarkar
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p>
+                                Nilava is a master's student in Computer Science and Engineering in Indian Institute
+                                of Technology Bombay (IIT Bombay). He finds his interests in software development, system
+                                integration, network interfaces and
+                                much more.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container social" style="text-align: center;">
+                        <a href=""> <i class="fa-solid fa-globe"></i> </a>    
+                        <a href=""> <i class="fa-brands fa-instagram"></i> </a> 
+                        <a href=""> <i class="fa-brands fa-facebook"></i> </a> 
+                        <a href=""> <i class="fa-sharp fa-solid fa-envelope"></i> </a> 
+                        <a href=""> <i class="fa-brands fa-linkedin"></i> </a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+
+            <div class="container" style="text-align:center; margin-top:3%">
+                <img src="{% static 'images/iitb.png' %}" style="width: 10%;">
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="w-100">
+        <div class="container-md">
+            <div class="row">
+                <div class="col-md-5 footer-col">
+                    <h4>Ghar Dhundo</h4>
+                    <p>Find your home anywhere</p>
+                </div>
+
+                <div class="col footer-col">
+                    <ul class="nav col-md-5 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-google fa-lg"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col footer-col">
+                    <h4>Newsletter</h4>
+                    <div class="form-group">
+                        <form class="form-inline col-sm-8">
+                            <input type="text" class="mb-2 col-sm-2 form-control" placeholder="Enter email address">
+                        </form>
+                        <button class="btn btn-primary col-sm-4" type="submit"> Subscribe </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
